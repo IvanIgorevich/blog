@@ -1,13 +1,35 @@
-<%= render @article %>
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <div class="mb-4">
+        <%= render @article %>
+      </div>
 
-<div class="mb-3">
-  <%= link_to "Edit this article", edit_article_path(@article), class: 'btn btn-outline-primary' %>
-</div>
-<div class="mb-3">
-  <%= link_to "Back to articles", articles_path, class: 'btn btn-outline-primary' %>
+      <div class="mb-3">
+        <%= link_to "Edit this article", edit_article_path(@article), class: 'btn btn-outline-primary' %>
+      </div>
+      <div class="mb-3">
+        <%= link_to "Back to articles", articles_path, class: 'btn btn-outline-primary' %>
 
-</div>
-<div class="mb-3">
-  <%= button_to "Destroy this article", @article, method: :delete, class: 'btn btn-outline-danger' %>
+      </div>
+      <div class="mb-3">
+        <%= button_to "Destroy this article", @article, method: :delete, class: 'btn btn-outline-danger' %>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="mb-4">
+        <div class="mb-3">
+          <% if @article.comments.any? %>
+            <h3>Comments</h3>
+            <%= render @article.comments %>
+          <% end %>
 
+        </div>
+        <div class="mb-3">
+          <h4>Add a comment:</h4>
+          <%= render 'comments/form' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

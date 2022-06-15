@@ -1,20 +1,23 @@
-<div class="mb-3" id="<%= dom_id article %>">
-  <div class="mb-3">
-    <h3>
-      Title:
-    </h3>
-  </div>
-  <p>
-    <%= article.title %>
-  </p>
+<div class="container">
+  <div class="p-3 border bg-light" id="<%= dom_id article %>">
+    <div class="mb-3">
+      <h5>
+        Title:
+      </h5>
+    </div>
+    <div class="mb-3">
+        <%= article.title %>
+    </div>
 
-  <div class="mb-3">
-    <h4>
-      Body:
-    </h4>
-  </div>
-  <p>
-    <%= article.body %>
-  </p>
 
+    <div class="mb-3">
+      <h5>
+        Body:
+      </h5>
+    </div>
+    <div class="mb-3">
+        <%= article.body %>
+    </div>
+  </div>
 </div>
+

@@ -1,0 +1,30 @@
+<div class="mb-3">
+  <div class="mb-3">
+    <h6>
+      Commenter:
+    </h6>
+  </div>
+  <p>
+    <%= comment.commenter %>
+  </p>
+
+  <div class="mb-3">
+    <h6>
+      Comment:
+    </h6>
+  </div>
+  <p>
+    <%= comment.body %>
+  </p>
+
+  <div class="mb-3">
+
+    <p>
+      <%= link_to "Destroy Comment", [comment.article, comment], data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }, class: 'btn btn-outline-danger' %>
+    </p>
+  </div>
+
+</div>

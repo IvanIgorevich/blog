@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
 
-  <body>
-  <div class="container-sm">
-    <% if notice.present? %>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <%= notice %>
-       </div>
-    <% end %>
+<body>
+<div class="container my-3 mx-3">
+  <% if notice.present? %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
 
+  <% if alert.present? %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= alert %>
+    </div>
+  <% end %>
+
+  <div class="container">
     <%= yield %>
   </div>
+</div>
 
-  </body>
+</body>
 </html>
